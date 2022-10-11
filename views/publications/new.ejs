@@ -1,0 +1,15 @@
+<%- include('../partials/header') %>
+
+<form action="/publications" method="POST">
+    <input type="text" name="title" required="true" placeholder="Title">
+    <input type="text" name="creator" required="true" placeholder="Creator">
+    <select name="medium" required="true" autocomplete="on">
+        <option value="Book">Book</option>
+        <option value="Movie">Movie</option>
+        <option value="TV series">TV series</option>
+        <option value="Comic series">Comic series</option>
+        <option value="Other">Other</option>
+    </select>
+</form>
+
+<%- include('../partials/footer') %>

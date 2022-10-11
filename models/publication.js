@@ -6,7 +6,9 @@ publicationSchema = new Schema({
     medium: {
         type: String,
         enum: ['Book', 'Movie', 'TV series', 'Comic series', 'Other']
-    }
+    },
+    creator: String,
+    tags: [],
 })
 
 module.exports = mongoose.model('Publication', publicationSchema);

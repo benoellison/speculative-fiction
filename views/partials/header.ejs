@@ -8,8 +8,12 @@
   <title><%= title %></title>
 </head>
 <body>
-  <% if (user) { %>
-    <a href="/logout">Log out</a>
-  <% } else { %>
-    <a href="/auth/google">Log in</a>
-  <% } %>
+  <nav>
+    <a href="/tags">Tags</a>
+    <a href="/publications">Publications</a>
+    <% if (user) { %>
+      <a href="/logout">Log out</a>
+    <% } else { %>
+      <a href="/auth/google">Log in</a>
+    <% } %>
+  </nav>
