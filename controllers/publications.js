@@ -6,11 +6,13 @@ module.exports = {
 }
 
 function index(req, res) {
-    res.render('publications/index', {title: 'Publication List'})
+    Publication.find({}, function(err, publications) {
+        res.render('publications/index', { title: 'Publication List', publications });
+      });
 }
 function newPublication(req, res) {
     res.render('publications/new', {title: 'New Publication'})
 }
 function create(req, res) {
-    
+
 }
