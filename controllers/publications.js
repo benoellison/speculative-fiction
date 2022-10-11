@@ -11,3 +11,6 @@ function index(req, res) {
 function newPublication(req, res) {
     res.render('publications/new', {title: 'New Publication'})
 }
+function create(req, res) {
+    
+}
