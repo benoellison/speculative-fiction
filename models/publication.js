@@ -9,6 +9,8 @@ publicationSchema = new Schema({
     },
     creator: String,
     tags: [{type: Schema.Types.ObjectId, ref: 'Tag'}],
-})
+},
+{timestamps: true}
+)
 
 module.exports = mongoose.model('Publication', publicationSchema);
