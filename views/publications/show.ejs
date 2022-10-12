@@ -1,5 +1,12 @@
 <%- include('../partials/header') %>
 
+<%= publication.title %>
 
+<form action="/publications/<%= publication._id %>" method="POST">
+    <select name="tagId">
+      <%- publication.tags.map(t => `<option value="${t._id}">${t.name}</option>`) .join('') %>
+    </select>
+    <button type="submit">Add tag to publication</button>
+  </form>
 
 <%- include('../partials/footer') %>
