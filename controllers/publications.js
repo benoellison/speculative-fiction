@@ -1,4 +1,5 @@
 const Publication = require('../models/publication')
+const Tag = require('../models/tag')
 
 module.exports = {
     index,
@@ -16,8 +17,14 @@ function newPublication(req, res) {
     res.render('publications/new', {title: 'New Publication'})
 }
 function show(req, res) {
-    Publication.findById(req.params.id, function(err, publication) {
-        res.render('publications/show', { title: `${publication.title}`, publication });
+    Publication.findById(req.params.id)
+    .populate('tags')
+    .exec(function(err, publication) {
+        Tag
+        .find({_id: {$nin: publication.tags}})
+        .sort('name').exec(function(err, tags) {
+            res.render('publications/show', { title: `${publication.title}`, publication, tags });
+        })
     })
 }
 function create(req, res) {

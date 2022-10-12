@@ -33,6 +33,8 @@ function create(req, res) {
 function addTagtoPub(req, res) {
     Publication.findById(req.params.id, function(err, publication) {
         publication.tags.push(req.body.tagId)
+        console.log(req.body.tagId);
+        console.log(req.body);
         publication.save(function(err) {
             res.redirect(`/publications/${publication._id}`)
           })
