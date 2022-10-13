@@ -7,7 +7,7 @@
         `<li>${t.name}</li>`)
         .join('') %>
 </ul>
-<form action="/publications/<%= publication._id %>/tags" method="POST">
+<form action="/tags/publications/<%= publication._id %>/tags" method="POST">
     <select name="tagId">
       <%- tags.map(t => `<option value="${t._id}">${t.name}</option>`) .join('') %>
     </select>
