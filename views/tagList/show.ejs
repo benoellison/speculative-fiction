@@ -1,5 +1,11 @@
 <%- include('../partials/header') %>
 
-tag
+<%= tag.name %>
+
+<ul>
+    <%- tag.publications.map(p => 
+        `<li>${p.title}</li>`)
+        .join('') %>
+</ul>
 
 <%- include('../partials/footer') %>

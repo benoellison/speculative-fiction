@@ -32,11 +32,16 @@ function create(req, res) {
 
 function addTagtoPub(req, res) {
     Publication.findById(req.params.id, function(err, publication) {
-        publication.tags.push(req.body.tagId)
-        console.log(req.body.tagId);
-        console.log(req.body);
-        publication.save(function(err) {
-            res.redirect(`/publications/${publication._id}`)
-          })
+        Tag.findById(req.body.tagId, function(err, tag) {
+            console.log(req.body.tagId)
+            console.log(tag)
+            console.log(publication._id)
+            console.log(req.params.id)
+            publication.tags.push(req.body.tagId)
+            tag.publications.push(publication._id);
+            publication.save(function(err) {
+                res.redirect(`/publications/${publication._id}`)
+              })
+        })
     })
 }
