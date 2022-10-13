@@ -1,6 +1,8 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: black;
+  color: white;
 }
 
 a {
@@ -8,5 +10,17 @@ a {
 }
 
 nav {
-  background-color: green;
+  background-color: lightblue;
+}
+
+li {
+  list-style-type: none;
+}
+
+#reviews > h4 {
+  color: red;
+}
+
+h3 {
+  color: lightgreen;
 }

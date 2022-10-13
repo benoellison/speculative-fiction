@@ -1,12 +1,29 @@
 <%- include('../partials/header') %>
 
-<%= publication.title %>
+<section>
+  <h3>Title:</h3>
+    <p><%= publication.title %></p>
+  <h3>Creator:</h3>
+    <p><%= publication.creator %></p>
+  <h3>Medium:</h3>
+    <p><%= publication.medium %></p>
+</section>
 
-<ul>
-    <%- publication.tags.map(t => 
-        `<li>${t.name}</li>`)
-        .join('') %>
-</ul>
+<section>
+  <h3>Tags:</h3>
+  <ul><%- publication.tags.map(t => 
+      `<li>${t.name}</li>`)
+      .join('') %>
+  </ul>
+</section>
+
+<section id="reviews">
+  <h3>Reviews</h3>
+  <% publication.reviews.forEach(function(r) { %>
+    <h4><%= r.userName %></h4>
+      <p><%= r.content %></p>
+  <% }) %>
+</section>
 
 <% if (user) { %>
   <form action="/tags/publications/<%= publication._id %>/tags" method="POST">
@@ -17,14 +34,11 @@
     <button type="submit">Add tag to publication</button>
 </form>
 
-<form name="content" action="/publications/<%= publication._id %>/reviews" method="POST">
-  <input type="text" placeholder="Add a review/description here."></input>
+<form action="/publications/<%= publication._id %>/reviews" method="POST">
+  <textarea name="content" type="text" placeholder="Add a review/description here."></textarea>
   <input type="submit" value="Add Review/Description">
 </form>
 <% } %>
 
-<% publication.reviews.forEach(function(r) { %>
-  <p> <%= r %> </p>
-<% }) %>
 
 <%- include('../partials/footer') %>

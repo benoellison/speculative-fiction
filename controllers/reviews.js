@@ -9,6 +9,7 @@ function create(req, res) {
         req.body.user = req.user._id;
         req.body.userName = req.user.name;
         req.body.userAvatar = req.user.avatar;
+        console.log(req.body) 
         publication.reviews.push(req.body)
         publication.save(function(err) {
             res.redirect(`/publications/${publication._id}`)

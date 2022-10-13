@@ -1,11 +1,16 @@
 <%- include('../partials/header') %>
 
-<% if (user) { %>
-    <a href="/tags/new">Add a new tag</a>
-<% } %>
+<div>
+    <% if (user) { %>
+        <a href="/tags/new">Add a new tag</a>
+    <% } %>
+</div>
 
-<% tags.forEach(function(t) { %>
-    <a href="/tags/<%= t._id %>"> <%= t.name %></a>
-<% }); %>
+<section>
+    <% tags.forEach(function(t) { %>
+        <a href="/tags/<%= t._id %>"> <%= t.name %><br></a>
+    <% }); %>
+</section>
+
 
 <%- include('../partials/footer') %>
