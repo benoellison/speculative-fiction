@@ -40,7 +40,9 @@ function addTagtoPub(req, res) {
             publication.tags.push(req.body.tagId)
             tag.publications.push(publication._id);
             publication.save(function(err) {
-                res.redirect(`/publications/${publication._id}`)
+                tag.save(function(err) {
+                    res.redirect(`/publications/${publication._id}`)
+                })
               })
         })
     })
