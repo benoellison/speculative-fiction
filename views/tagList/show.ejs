@@ -3,8 +3,8 @@
 <%= tag.name %>
 
 <ul>
-    <%- tag.publications.map(p => 
-        `<li>${p.title}</li>`)
+    <%- tag.publications.map(p =>
+        `<li>${p.title}</a></li>`)
         .join('') %>
 </ul>
 

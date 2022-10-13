@@ -7,12 +7,24 @@
         `<li>${t.name}</li>`)
         .join('') %>
 </ul>
-<form action="/tags/publications/<%= publication._id %>/tags" method="POST">
+
+<% if (user) { %>
+  <form action="/tags/publications/<%= publication._id %>/tags" method="POST">
     <select name="tagId">
       <%- tags.map(t => `<option value="${t._id}">${t.name}</option>`) .join('') %>
     </select>
     <!-- <input type="text" name="tag"> -->
     <button type="submit">Add tag to publication</button>
-  </form>
+</form>
+
+<form name="content" action="/publications/<%= publication._id %>/reviews" method="POST">
+  <input type="text" placeholder="Add a review/description here."></input>
+  <input type="submit" value="Add Review/Description">
+</form>
+<% } %>
+
+<% publication.reviews.forEach(function(r) { %>
+  <p> <%= r %> </p>
+<% }) %>
 
 <%- include('../partials/footer') %>

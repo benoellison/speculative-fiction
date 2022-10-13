@@ -17,11 +17,24 @@ function index(req, res) {
 function newTag(req, res) {
     res.render('tagList/new', {title: 'New Tag'})
 }
+// function show(req, res) {
+//     Tag.findById(req.params.id, function(err, tag) {
+//         res.render('tagList/show', { title: `${tag.name}`, tag });
+//     })
+// }
+
 function show(req, res) {
-    Tag.findById(req.params.id, function(err, tag) {
-        res.render('tagList/show', { title: `${tag.name}`, tag });
+    Tag.findById(req.params.id)
+    .populate('publications')
+    .exec(function(err, tag) {
+        Publication
+        .find({_id: {$nin: tag.publications}})
+        .sort('title').exec(function(err, publications) {
+            res.render('tagList/show', { title: `${tag.name}`, tag, publications });
+        })
     })
 }
+
 function create(req, res) {
     let tag = new Tag(req.body);
     tag.save(function(err) {
@@ -33,10 +46,6 @@ function create(req, res) {
 function addTagtoPub(req, res) {
     Publication.findById(req.params.id, function(err, publication) {
         Tag.findById(req.body.tagId, function(err, tag) {
-            console.log(req.body.tagId)
-            console.log(tag)
-            console.log(publication._id)
-            console.log(req.params.id)
             publication.tags.push(req.body.tagId)
             tag.publications.push(publication._id);
             publication.save(function(err) {
