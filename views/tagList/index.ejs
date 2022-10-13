@@ -1,0 +1,9 @@
+<%- include('../partials/header') %>
+
+<a href="/tags/new">Add a new tag</a>
+
+<% tags.forEach(function(t) { %>
+    <a href="/tags/<%= t._id %>"> <%= t.name %></a>
+<% }); %>
+
+<%- include('../partials/footer') %>

@@ -11,15 +11,15 @@ module.exports = {
 
 function index(req, res) {
     Tag.find({}, function(err, tags) {
-        res.render('tags/index', { title: 'Tag List', tags });
+        res.render('tagList/index', { title: 'Tag List', tags });
       });
 }
 function newTag(req, res) {
-    res.render('tags/new', {title: 'New Tag'})
+    res.render('tagList/new', {title: 'New Tag'})
 }
 function show(req, res) {
     Tag.findById(req.params.id, function(err, tag) {
-        res.render('tags/show', { title: `${tag.name}`, tag });
+        res.render('tagList/show', { title: `${tag.name}`, tag });
     })
 }
 function create(req, res) {
