@@ -1,10 +1,10 @@
 <%- include('../partials/header') %>
 
-<div>
-    <% if (user) { %>
-        <a href="/tags/new">Add a new tag</a>
-    <% } %>
-</div>
+<% if (user) { %>
+    <div>
+        <a class="add-new" href="/tags/new">Add a new tag</a>
+    </div>
+<% } %>
 
 <section>
     <% tags.forEach(function(t) { %>

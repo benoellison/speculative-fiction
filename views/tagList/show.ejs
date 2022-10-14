@@ -3,9 +3,9 @@
 <h1><%= tag.name %></h1>
 
 <ul>
-    <%- tag.publications.map(p =>
-        `<li>${p.title}</a></li>`)
-        .join('') %>
+    <% tag.publications.map(p => {%>
+        <li><a href="../publications/<%= p._id %>"> <%= p.title %></a></li>
+        <% }).join('') %>
 </ul>
 
 <%- include('../partials/footer') %>

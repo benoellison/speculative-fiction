@@ -1,16 +1,34 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: black;
+  background-color: #000015;
   color: white;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
   color: red;
 }
-
 nav {
-  background-color: lightblue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #03ddff;
+  flex-wrap: nowrap;
+  border-radius: 5px;
+  text-shadow: 1px 1px #000015;
+}
+nav:last-child {
+  white-space: nowrap;
+}
+#menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 30px;
+  margin: 10px;
 }
 
 li {
@@ -22,5 +40,13 @@ li {
 }
 
 h3 {
+  color: lightgreen;
+}
+
+img {
+    border-radius: 50%;
+    height: 1em;
+}
+.add-new {
   color: lightgreen;
 }

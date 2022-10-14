@@ -11,16 +11,19 @@
 
 <section>
   <h3>Tags:</h3>
-  <ul><%- publication.tags.map(t => 
-      `<li>${t.name}</li>`)
-      .join('') %>
-  </ul>
+  <ul>
+    <% publication.tags.map(t => {%>
+        <li><a href="../tags/<%= t._id %>"> <%= t.name %></a></li>
+        <% }).join('') %>
+</ul>
 </section>
 
 <section id="reviews">
   <h3>Reviews</h3>
   <% publication.reviews.forEach(function(r) { %>
+    <!-- <img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %> -->
     <h4><%= r.userName %></h4>
+    <img
       <p><%= r.content %></p>
   <% }) %>
 </section>
