@@ -1,10 +1,13 @@
-#Speculative Fiction Database
+# Speculative Fiction Database
+Created by Benno Ellison
 
-##Description
+## Description
 This is a database used to store user-submitted works of speculative fiction (i.e. works of science fiction, fantasy, etc.) and sort them by user-submitted tags (e.g. "science fiction", "fantasy", etc.).  A user must log in to submit either a new tag or a new publication, or add a new review/description of a publication or add new tags to it.
 
-##Technologies Used
-Javascript
-CSS
+## Technologies Used
+JavaScript
+CSS 3
 HTML5
+MongoDB
+Express.js
 Node.js
