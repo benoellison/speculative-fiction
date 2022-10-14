@@ -27,8 +27,8 @@ Go to **[this link](https://speculative-fiction.onrender.com)** to view the data
 </ul>
 
 ## Screenshots
-<img src="https://imgur.com/ecIIQFN">
-<img src="https://imgur.com/pvs6RRu">
-<img src="https://imgur.com/9pyHJlP">
-<img src="https://imgur.com/2JLsDtK">
-<img src="https://imgur.com/AxOSJns">
+<img src="https://i.imgur.com/ecIIQFN.png">
+<img src="https://i.imgur.com/pvs6RRu.png">
+<img src="https://i.imgur.com/9pyHJlP.png">
+<img src="https://i.imgur.com/2JLsDtK.png">
+<img src="https://i.imgur.com/AxOSJns.png">
